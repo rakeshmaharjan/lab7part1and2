@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W2D1 Quiz</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // initialize mocha
+        mocha.setup('bdd');
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+
+    </script>
+
+    <script src="code.js"></script>
+    <script src="tests.js"></script>
+    <style>
+        .main-form{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://www.google.com/search">
+        <div class="main-form">
+           <div>
+            Email: <input type="text" id="email">
+           </div> 
+           <div>
+            Password: <input type="password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{10}" title="Password field is at least 10 characters in length and contain at least one number and one uppercase and lowercase letter.">
+           </div>
+           <div>
+               Url:
+               <input type="text" id="url" pattern="https?:\/\/+[a-zA-Z0-9]+\.[a-z]{3}" title="Invalid url">
+           </div>
+           <div>
+            <input type="submit" name="submit" value="submit">
+           </div>
+         
+        </div>
+    
+    </form>
+
+
+    <div id="mocha"></div>
+    <script>
+        mocha.run();
+
+    </script>
+</body>
+
+</html>
